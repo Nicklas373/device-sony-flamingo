@@ -29,8 +29,17 @@ BOARD_KERNEL_CMDLINE += androidboot.hardware=flamingo
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/sony/flamingo/releasetools
 
-#twrp
+# TWRP Only Available for FOTA / Recovery Build, not for ROM Build
 RECOVERY_VARIANT := twrp
 TARGET_USERIMAGES_USE_F2FS := true
 TW_THEM := portrait_hdpi
+TW_FLASH_FROM_STORAGE := true
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 RECOVERY_SDCARD_ON_DATA := true
+TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_INCLUDE_FUSE_EXFAT := true
+TW_INCLUDE_NTFS_3G := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_MAX_BRIGHTNESS := 255
+TW_INCLUDE_CRYPTO := true
